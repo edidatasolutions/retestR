@@ -1,0 +1,21 @@
+Package: retestR
+Title: Model-Based Anomaly Detection for Repeat Test-Takers
+Version: 0.1.0
+Authors@R: person("Daniel", "Edi", email = "danieledi2026@gmail.com", role = c("aut", "cre"))
+Description: Flags repeat test-takers whose second-attempt performance departs
+    from what a growth model predicts, using independent evidence sources:
+    model-expected score gain (accounting for regression to the mean, time
+    between attempts and remediation), differential performance on exposed
+    versus new items, and differential response speed. Evidence is combined
+    into a risk index calibrated by parametric bootstrap under the
+    no-misconduct model, so flagging thresholds carry explicit false-positive
+    rates.
+License: MIT + file LICENSE
+URL: https://github.com/edidatasolutions/retestR, https://edidatasolutions.github.io/retestR/
+BugReports: https://github.com/edidatasolutions/retestR/issues
+Encoding: UTF-8
+Depends: R (>= 4.1)
+Imports: stats, utils
+Suggests: knitr, markdown
+VignetteBuilder: knitr
+Config/roxygen2/version: 8.1.0

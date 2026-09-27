@@ -1,0 +1,72 @@
+---
+title: "Model-based flagging of repeat test-takers"
+output: markdown::html_format
+vignette: >
+  %\VignetteIndexEntry{Model-based flagging of repeat test-takers}
+  %\VignetteEngine{knitr::knitr}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(collapse = TRUE, comment = "#>")
+```
+
+Flagging repeaters on raw score gain punishes candidates who studied or
+remediated. retestR asks a different question: is this gain larger than
+*this* candidate's circumstances predict, and is it concentrated where
+preknowledge would put it?
+
+## Data
+
+Each repeater took two disjoint forms drawn from a calibrated bank in which
+every item is marked either `exposed` (long-running, possibly compromised) or
+new. The simulation plants preknowledge in 5% of repeaters.
+
+```{r}
+library(retestR)
+sim <- rt_simulate(n_persons = 800, form_exposed = 30, form_new = 15, seed = 1)
+head(sim$data$persons)
+table(sim$truth$preknowledge)
+```
+
+With real data, assemble the same structure with `rt_data(responses, persons, bank)`.
+
+## Expected gain
+
+The growth model uses attempt 1 and only the *new* items of attempt 2, so
+preknowledge cannot inflate the expected gain.
+
+```{r}
+fit <- rt_fit(sim, growth = ~ log(days_between) + remediation)
+fit
+```
+
+## Evidence and risk
+
+```{r}
+risk <- rt_risk(fit, n_null = 4, alpha = 0.01, seed = 1)
+risk
+```
+
+`p_value` is calibrated by simulating complete honest administrations
+through the same pipeline, so it is the false-positive rate for an honest
+repeater.
+
+```{r}
+table(flagged = risk$flag, preknowledge = sim$truth$preknowledge)
+```
+
+## Compared with raw-gain flagging
+
+Flag the same number of candidates by raw gain and look at who gets caught:
+
+```{r}
+raw <- rt_raw_gain(sim)
+k <- sum(risk$flag)
+raw_flag <- raw$gain >= sort(raw$gain, decreasing = TRUE)[k]
+honest_remediated <- !sim$truth$preknowledge & sim$truth$remediation == 1
+c(model_caught = sum(risk$flag & sim$truth$preknowledge),
+  raw_caught = sum(raw_flag & sim$truth$preknowledge),
+  model_flags_remediated = sum(risk$flag & honest_remediated),
+  raw_flags_remediated = sum(raw_flag & honest_remediated))
+```
