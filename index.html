@@ -92,9 +92,9 @@
 </ol>
 </div>
 <div class="section level2">
-<h2 id="validation-known-truth-instvalidationknown_truthr">Validation (known truth, <code>inst/validation/known_truth.R</code>)<a class="anchor" aria-label="anchor" href="#validation-known-truth-instvalidationknown_truthr"></a>
+<h2 id="validation-known-truth-100-replications">Validation (known truth, 100 replications)<a class="anchor" aria-label="anchor" href="#validation-known-truth-100-replications"></a>
 </h2>
-<p>3,000 repeaters, 40% remediated. 5% had preknowledge of 60% of the exposed pool at attempt 2. Flagging at alpha = .01:</p>
+<p>3,000 repeaters, 40% remediated. 5% had preknowledge of 60% of the exposed pool at attempt 2. Flagging at alpha = .01 (means over 100 replications):</p>
 <table class="table">
 <colgroup>
 <col width="25%">
@@ -111,27 +111,27 @@
 <tbody>
 <tr>
 <td>exposed + rt (default)</td>
-<td>100%</td>
-<td>1.01%</td>
-<td>13</td>
+<td>98.9%</td>
+<td>1.03%</td>
+<td>11.1</td>
 </tr>
 <tr>
 <td>exposed only (no RT data)</td>
-<td>66%</td>
-<td>0.84%</td>
-<td>8</td>
+<td>63.0%</td>
+<td>1.01%</td>
+<td>9.8</td>
 </tr>
 <tr>
-<td>raw gain, same number flagged</td>
-<td>45%</td>
+<td>raw gain, same number flagged as default</td>
+<td>41.8%</td>
 <td>—</td>
-<td>86</td>
+<td>95.1</td>
 </tr>
 </tbody>
 </table>
 <ul>
-<li>The growth model recovers true coefficients across 8 seeds (mean growth error ≤ 0.02 logits).</li>
-<li>With nobody cheating, flag rates are 5.4% / 1.2% / 0.13% at .05 / .01 / .001. That is slightly liberal, because the null uses plug-in parameters.</li>
+<li>The growth model recovers its coefficients without detectable bias: remediation 0.406 (true 0.40), log(days) 0.102 (true 0.10), growth SD 0.251 (true 0.25); person-level expected growth is off by 0.015 logits on average.</li>
+<li>Honest repeaters are flagged at 5.01% / 1.03% / 0.10% at .05 / .01 / .001, matching nominal levels. The null uses plug-in parameters, so it may be liberal in much smaller programs.</li>
 </ul>
 </div>
 <div class="section level2">

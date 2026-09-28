@@ -54,22 +54,25 @@ pak::pak("edidatasolutions/retestR")
     the same pipeline, so `p_value` is a false-positive rate for an
     honest repeater. `q_value` is BH.
 
-## Validation (known truth, `inst/validation/known_truth.R`)
+## Validation (known truth, 100 replications)
 
 3,000 repeaters, 40% remediated. 5% had preknowledge of 60% of the
-exposed pool at attempt 2. Flagging at alpha = .01:
+exposed pool at attempt 2. Flagging at alpha = .01 (means over 100
+replications):
 
 | evidence | detection | honest false-positive rate | honest remediated flagged |
 |----|----|----|----|
-| exposed + rt (default) | 100% | 1.01% | 13 |
-| exposed only (no RT data) | 66% | 0.84% | 8 |
-| raw gain, same number flagged | 45% | — | 86 |
+| exposed + rt (default) | 98.9% | 1.03% | 11.1 |
+| exposed only (no RT data) | 63.0% | 1.01% | 9.8 |
+| raw gain, same number flagged as default | 41.8% | — | 95.1 |
 
-- The growth model recovers true coefficients across 8 seeds (mean
-  growth error ≤ 0.02 logits).
-- With nobody cheating, flag rates are 5.4% / 1.2% / 0.13% at .05 / .01
-  / .001. That is slightly liberal, because the null uses plug-in
-  parameters.
+- The growth model recovers its coefficients without detectable bias:
+  remediation 0.406 (true 0.40), log(days) 0.102 (true 0.10), growth SD
+  0.251 (true 0.25); person-level expected growth is off by 0.015 logits
+  on average.
+- Honest repeaters are flagged at 5.01% / 1.03% / 0.10% at .05 / .01 /
+  .001, matching nominal levels. The null uses plug-in parameters, so it
+  may be liberal in much smaller programs.
 
 ## Status and assumptions
 
