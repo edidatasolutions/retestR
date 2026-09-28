@@ -85,17 +85,17 @@ conditioning on the full attempt-1 likelihood handles regression to the mean.</p
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">sim</span> <span class="op">&lt;-</span> <span class="fu"><a href="rt_simulate.html">rt_simulate</a></span><span class="op">(</span>n_persons <span class="op">=</span> <span class="fl">300</span>, form_exposed <span class="op">=</span> <span class="fl">20</span>, form_new <span class="op">=</span> <span class="fl">10</span>, seed <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">sim</span> <span class="op">&lt;-</span> <span class="fu"><a href="rt_simulate.html">rt_simulate</a></span><span class="op">(</span>n_persons <span class="op">=</span> <span class="fl">200</span>, form_exposed <span class="op">=</span> <span class="fl">20</span>, form_new <span class="op">=</span> <span class="fl">10</span>, seed <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="va">fit</span> <span class="op">&lt;-</span> <span class="fu">rt_fit</span><span class="op">(</span><span class="va">sim</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="va">fit</span>    <span class="co"># growth coefficients: intercept, log(days_between), remediation</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;rt_fit&gt; expected-gain model, 300 repeaters</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> attempt-1 ability: N(-0.498, 0.701^2)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;rt_fit&gt; expected-gain model, 200 repeaters</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> attempt-1 ability: N(-0.499, 0.701^2)</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> growth coefficients:</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                   estimate    se</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> (Intercept)         -0.401 0.427</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> log(days_between)    0.101 0.083</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> remediation          0.486 0.111</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> growth SD: 0.459 | log-RT residual SD: 0.502</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> (Intercept)          0.112 0.460</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> log(days_between)    0.027 0.090</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> remediation          0.714 0.129</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> growth SD: 0.299 | log-RT residual SD: 0.501</span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>

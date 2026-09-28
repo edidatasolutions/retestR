@@ -39,15 +39,15 @@ An \`rt_fit\` object.
 ## Examples
 
 ``` r
-sim <- rt_simulate(n_persons = 300, form_exposed = 20, form_new = 10, seed = 1)
+sim <- rt_simulate(n_persons = 200, form_exposed = 20, form_new = 10, seed = 1)
 fit <- rt_fit(sim)
 fit    # growth coefficients: intercept, log(days_between), remediation
-#> <rt_fit> expected-gain model, 300 repeaters
-#> attempt-1 ability: N(-0.498, 0.701^2)
+#> <rt_fit> expected-gain model, 200 repeaters
+#> attempt-1 ability: N(-0.499, 0.701^2)
 #> growth coefficients:
 #>                   estimate    se
-#> (Intercept)         -0.401 0.427
-#> log(days_between)    0.101 0.083
-#> remediation          0.486 0.111
-#> growth SD: 0.459 | log-RT residual SD: 0.502
+#> (Intercept)          0.112 0.460
+#> log(days_between)    0.027 0.090
+#> remediation          0.714 0.129
+#> growth SD: 0.299 | log-RT residual SD: 0.501
 ```

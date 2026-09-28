@@ -41,13 +41,13 @@ Data frame: \`person\`, \`S1\`, \`S2\`, \`z_gain\`, \`z_exposed\`, and
 ## Examples
 
 ``` r
-sim <- rt_simulate(n_persons = 300, form_exposed = 20, form_new = 10, seed = 1)
+sim <- rt_simulate(n_persons = 200, form_exposed = 20, form_new = 10, seed = 1)
 fit <- rt_fit(sim)
 ev <- rt_evidence(fit)
 # preknowledge shows up on exposed items and in speed, not only in the gain
 aggregate(ev[c("z_gain", "z_exposed", "z_rt")],
           list(preknowledge = sim$truth$preknowledge), mean)
-#>   preknowledge    z_gain z_exposed        z_rt
-#> 1        FALSE 0.1026923 0.1484031 -0.04455579
-#> 2         TRUE 1.0031042 1.8654883  2.78101215
+#>   preknowledge    z_gain  z_exposed       z_rt
+#> 1        FALSE -0.110486 -0.1540647 0.01499349
+#> 2         TRUE  1.996404  2.7210563 3.33693387
 ```
