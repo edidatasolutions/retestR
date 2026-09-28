@@ -75,3 +75,9 @@ unweighted sum.
 Assumes a calibrated Rasch bank with item-level exposure status and
 lognormal time intensities, two attempts per repeater, and no item repeated
 within a person.
+
+## Getting help and contributing
+
+Questions and bug reports: https://github.com/edidatasolutions/retestR/issues. See
+[CONTRIBUTING.md](.github/CONTRIBUTING.md) for how to report problems, get
+help, or contribute code.
