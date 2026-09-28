@@ -13,6 +13,8 @@ This is the first submission of retestR.
 0 errors | 0 warnings | 1 note
 
 * This is a new release.
+* Words flagged as possibly misspelled ("Sinharay", "der") are author names
+  of cited references (Sinharay, 2017; van der Linden, 2006).
 
 ## Notes for the reviewer
 
