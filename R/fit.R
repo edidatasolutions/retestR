@@ -12,7 +12,7 @@
 #' @param grid Theta grid.
 #' @return An `rt_fit` object.
 #' @examples
-#' sim <- rt_simulate(n_persons = 300, form_exposed = 20, form_new = 10, seed = 1)
+#' sim <- rt_simulate(n_persons = 200, form_exposed = 20, form_new = 10, seed = 1)
 #' fit <- rt_fit(sim)
 #' fit    # growth coefficients: intercept, log(days_between), remediation
 #' @export

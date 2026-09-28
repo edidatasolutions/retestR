@@ -60,7 +60,7 @@ evidence_core <- function(r, ids, fit) {
 #' @param fit An `rt_fit`.
 #' @return Data frame: `person`, `S1`, `S2`, `z_gain`, `z_exposed`, and `z_rt`.
 #' @examples
-#' sim <- rt_simulate(n_persons = 300, form_exposed = 20, form_new = 10, seed = 1)
+#' sim <- rt_simulate(n_persons = 200, form_exposed = 20, form_new = 10, seed = 1)
 #' fit <- rt_fit(sim)
 #' ev <- rt_evidence(fit)
 #' # preknowledge shows up on exposed items and in speed, not only in the gain

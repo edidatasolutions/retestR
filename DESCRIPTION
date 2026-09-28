@@ -7,7 +7,9 @@ Description: Flags repeat test-takers whose second-attempt performance departs
     from what a growth model predicts, using independent evidence sources:
     model-expected score gain (accounting for regression to the mean, time
     between attempts and remediation), differential performance on exposed
-    versus new items, and differential response speed. Evidence is combined
+    versus new items (Sinharay, 2017, <doi:10.3102/1076998616673872>), and
+    differential response speed under a lognormal response-time model (van
+    der Linden, 2006, <doi:10.3102/10769986031002181>). Evidence is combined
     into a risk index calibrated by parametric bootstrap under the
     no-misconduct model, so flagging thresholds carry explicit false-positive
     rates.

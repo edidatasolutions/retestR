@@ -36,7 +36,7 @@ correlation between evidence sources is accounted for, and `p_value` is an
 honest false-positive rate for an honest repeater.
 }
 \examples{
-sim <- rt_simulate(n_persons = 300, form_exposed = 20, form_new = 10, seed = 1)
+sim <- rt_simulate(n_persons = 200, form_exposed = 20, form_new = 10, seed = 1)
 fit <- rt_fit(sim)
 risk <- rt_risk(fit, n_null = 2, alpha = 0.01, seed = 1)
 risk

@@ -21,7 +21,7 @@
 #' @return An `rt_risk` data frame: evidence columns, `T`, per-component
 #'   empirical p-values, `p_value`, `q_value` (Benjamini-Hochberg), `flag`.
 #' @examples
-#' sim <- rt_simulate(n_persons = 300, form_exposed = 20, form_new = 10, seed = 1)
+#' sim <- rt_simulate(n_persons = 200, form_exposed = 20, form_new = 10, seed = 1)
 #' fit <- rt_fit(sim)
 #' risk <- rt_risk(fit, n_null = 2, alpha = 0.01, seed = 1)
 #' risk
