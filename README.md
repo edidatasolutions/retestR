@@ -1,5 +1,7 @@
 # retestR
 
+[![CRAN status](https://www.r-pkg.org/badges/version/retestR)](https://CRAN.R-project.org/package=retestR)
+
 **Model-based anomaly detection for repeat test-takers.**
 
 Programs usually flag repeaters on raw score gain, which punishes candidates
@@ -18,7 +20,7 @@ risk                                              # highest-risk repeaters first
 
 ## Installation
 
-From CRAN (once released):
+From CRAN:
 
 ```r
 install.packages("retestR")
